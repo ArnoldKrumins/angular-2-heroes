@@ -1,5 +1,7 @@
 import {bootstrap, Component, FORM_DIRECTIVES} from 'angular2/angular2';
 
+import {LoginTest} from "./login";
+
 class Hero {
   id: number;
   name: string;
@@ -14,9 +16,11 @@ class Hero {
         <div>
             <label>name: </label>
             <input [(ng-model)]="hero.name" placeholder="name">
+
         </div>
+             <login></login>
         `,
-    directives: [FORM_DIRECTIVES]
+    directives: [FORM_DIRECTIVES,LoginTest]
 })
 class AppComponent {
     public title = 'Tour of Heroes';
@@ -25,5 +29,6 @@ class AppComponent {
         name: 'Windstorm'
     };
 }
+
 
 bootstrap(AppComponent);
