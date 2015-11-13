@@ -3,19 +3,24 @@
  */
 import {bootstrap, Component,FORM_DIRECTIVES} from 'angular2/angular2';
 
-class user{
+class User{
     name:string;
 }
 
 @Component({
     selector: 'login',
     directives:[FORM_DIRECTIVES],
-    template: ` <div><input [(ng-model)]="user" type=\'text\'><button (click)="onClick(user)">Login</button></div>`
+    template: ` <div><input [(ng-model)]="user.name" type=\'text\'><button (click)="onClick(user)">Login</button>{{ user.name }}</div>`
 })
 export class LoginTest {
 
-    onClick(name){
-        console.log(name);
+    public user : User = {
+        name: 'Arnold'
+    };
+
+
+    onClick(user){
+        console.log(user.name);
 
     }
 
