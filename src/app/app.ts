@@ -1,6 +1,7 @@
 import {bootstrap, Component, FORM_DIRECTIVES} from 'angular2/angular2';
-
 import {LoginTest} from "./login";
+import {List} from '../app/directives/list';
+import {DataService} from './services/dataService'
 
 class Hero {
   id: number;
@@ -19,8 +20,9 @@ class Hero {
 
         </div>
              <login></login>
+             <list></list>
         `,
-    directives: [FORM_DIRECTIVES,LoginTest]
+    directives: [FORM_DIRECTIVES,LoginTest,List]
 })
 class AppComponent {
     public title = 'Tour of Heroes';
@@ -31,4 +33,4 @@ class AppComponent {
 }
 
 
-bootstrap(AppComponent);
+bootstrap(AppComponent,[DataService]);
